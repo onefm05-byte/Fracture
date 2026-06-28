@@ -1,38 +1,38 @@
 # Fracture
 
-A utility for damaging (mutating) files with protection of critical structures. Allows you to make random changes to the bytes of a file, keeping it open to images and videos.
+Утилита для повреждения (мутации) файлов с защитой критичных структур. Позволяет вносить случайные изменения в байты файла, сохраняя его открываемость для изображений и видео.
 
-## Starting from source
+## Запуск из исходников
 
 ```bash
 pip install pillow
 python main.py
 ```
 
-## Compilation in .exe
+## Компиляция в .exe
 
-Make sure that PyInstaller is installed:
+Убедись, что установлен PyInstaller:
 
 ```bash
 pip install pyinstaller
 ```
 
-Build from the '.spec` file (recommended):
+Сборка из `.spec` файла (рекомендуется):
 
 ```bash
 pyinstaller main.spec
 ```
 
-The finished '.exe` will appear in the `dist/` folder.
+Готовый `.exe` появится в папке `dist/`.
 
-## Usage
+## Использование
 
-1. Launch the program (`main.exe ` or `python main.py `).
-2. Poke **"Review"** and select the file.
-3. Specify ** the number of bytes** to change (the more— the more damage).
-4. Press **"Mutate"**.
-5. The program will create a copy with the suffix `_mutated` in the same folder.
+1. Запусти программу (`main.exe` или `python main.py`).
+2. Тыкни **«Обзор»** и выбери файл.
+3. Укажи **количество байт** для изменения (чем больше — тем сильнее повреждения).
+4. Нажми **«Mutate»**.
+5. Программа создаст копию с суффиксом `_mutated` в той же папке.
 
-### Protection of structures
+### Защита структур
 
-Critical bytes (headers, markers) are automatically protected for images so that the file remains openable. For the remaining files, the first 1024 bytes (header) are protected. If the mutation violates the integrity, the program automatically reduces the number of bytes being modified.
+Для изображений автоматически защищаются критические байты (заголовки, маркеры), чтобы файл остался открываемым. Для остальных файлов защищаются первые 1024 байта (заголовок). Если мутация нарушает целостность, программа автоматически уменьшает количество изменяемых байт.
