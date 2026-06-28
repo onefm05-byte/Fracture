@@ -1,38 +1,38 @@
 # Fracture
 
-Утилита для повреждения (мутации) файлов с защитой критичных структур. Позволяет вносить случайные изменения в байты файла, сохраняя его открываемость для изображений и видео.
+A utility for damaging (mutating) files with protection of critical structures. Allows you to make random changes to the bytes of a file, keeping it open to images and videos.
 
-## Запуск из исходников
+## Starting from source
 
 ```bash
 pip install pillow
 python main.py
 ```
 
-## Компиляция в .exe
+## Compilation in .exe
 
-Убедитесь, что установлен PyInstaller:
+Make sure that PyInstaller is installed:
 
 ```bash
 pip install pyinstaller
 ```
 
-Сборка из `.spec` файла (рекомендуется):
+Build from the '.spec` file (recommended):
 
 ```bash
 pyinstaller main.spec
 ```
 
-Готовый `.exe` появится в папке `dist/`.
+The finished '.exe` will appear in the `dist/` folder.
 
-## Использование
+## Usage
 
-1. Запусти программу (`main.exe` или `python main.py`).
-2. Тыкни **«Обзор»** и выбери файл.
-3. Укажи **количество байт** для изменения (чем больше — тем сильнее повреждения).
-4. Нажми **«Mutate»**.
-5. Программа создаст копию с суффиксом `_mutated` в той же папке.
+1. Launch the program (`main.exe ` or `python main.py `).
+2. Poke **"Review"** and select the file.
+3. Specify ** the number of bytes** to change (the more— the more damage).
+4. Press **"Mutate"**.
+5. The program will create a copy with the suffix `_mutated` in the same folder.
 
-### Защита структур
+### Protection of structures
 
-Для изображений автоматически защищаются критические байты (заголовки, маркеры), чтобы файл остался открываемым. Для остальных файлов защищаются первые 1024 байта (заголовок). Если мутация нарушает целостность, программа автоматически уменьшает количество изменяемых байт.
+Critical bytes (headers, markers) are automatically protected for images so that the file remains openable. For the remaining files, the first 1024 bytes (header) are protected. If the mutation violates the integrity, the program automatically reduces the number of bytes being modified.
